@@ -1,0 +1,5 @@
+To run the program, run main method in Main class providing one program argument consisting of path to file with text.
+
+The program will read text, use NumberExtractor to try to extract number (Long) and use Converter to convert it to English words.
+
+The program can convert only natural numbers less than Long.MAX_VALUE
