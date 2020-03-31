@@ -21,16 +21,18 @@ public class Converter {
 
         if (number >= billion) {
             sb.append(convertRecursively(number / billion))
-                    .append(" billion, ")
+                    .append(" billion")
+                    .append(number % billion > 0 ? ", " : "")
                     .append(convertRecursively(number % billion));
         } else if (number >= million) {
             sb.append(convertRecursively(number / million))
-                    .append(" million, ")
+                    .append(" million")
+                    .append(number % million > 0 ? ", " : "")
                     .append(convertRecursively(number % million));
         } else if (number >= thousand) {
             sb.append(convertRecursively(number / thousand))
                     .append(" thousand")
-                    .append(number % thousand > 99 ? ", " : " and ")
+                    .append(number % thousand > 0 ? (number % thousand > 99 ? ", " : " and ") : "")
                     .append(convertRecursively(number % thousand));
         } else if (number >= hundred) {
             sb.append(convertRecursively(number / hundred))
